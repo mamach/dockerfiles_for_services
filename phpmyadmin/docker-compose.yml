@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: 10.10.130.16
+      PMA_PORT: 3306
+      PMA_USER: ctrl4capp
+      PMA_PASSWORD: e#NbSTBKy3hgrk4
+    ports:
+      - "8080:80"
+    networks:
+      - my_network
+
+volumes:
+  db_data:
+
+networks:
+  my_network:
